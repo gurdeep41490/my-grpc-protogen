@@ -56,10 +56,8 @@ protoc-go-gateway:
 	--grpc-gateway_opt grpc_api_configuration=./grpc-gateway/config.yml \
 	--grpc-gateway_opt standalone=true \
 	--grpc-gateway_opt generate_unbound_methods=true \
-	./proto/hello/*.proto \
-	./proto/bank/*.proto ./proto/bank/type/*.proto \
-	./proto/resiliency/*.proto
-
+	./proto/hello/*.proto 
+	
 
 .PHONY: protoc-openapiv2-gateway
 protoc-openapiv2-gateway:
@@ -71,9 +69,7 @@ protoc-openapiv2-gateway:
 	--openapiv2_opt generate_unbound_methods=true \
 	--openapiv2_opt allow_merge=true \
 	--openapiv2_opt merge_file_name=merged \
-  ./proto/hello/*.proto \
-	./proto/bank/*.proto ./proto/bank/type/*.proto \
-	./proto/resiliency/*.proto
+  ./proto/hello/*.proto 
 
 
 .PHONY: build-gateway
