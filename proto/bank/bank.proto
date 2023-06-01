@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package bank;
+
+option go_package = "github.com/gurdeep41490/my-grpc-protogen/protogen/go/bank"
+
+
+message CurrentBalanceRequest {
+    uint32 account_number;
+}
+
+message CurrentBalanceResponse {
+    uint32 amount;
+}
+
+service BankService {
+    rpc GetCurrentBalanceRequest (CurrentBalanceRequest) returns (CurrentBalanceResponse){}
+}
+
